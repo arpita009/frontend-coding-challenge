@@ -7,19 +7,20 @@ import Stepper from "../components/stepper/stepper";
 import useStepper from "../hooks/useStepper";
 
 export default function Home() {
-	const { currentStep, handleNextStep } = useStepper();
-	return (
-		<>
-			<Header />
-			<MainWrapper>
-				<StepperWrapper>
-					{/*TODO: Make sure the Stepper handles clicks on the button*/}
-					<Stepper />
-				</StepperWrapper>
-				<ButtonWrapper>
-					<Button onClick={handleNextStep}>Next</Button>
-				</ButtonWrapper>
-			</MainWrapper>
-		</>
-	);
+  const { currentStep, handleNextStep } = useStepper();
+  console.log("Current Step:", currentStep);
+  return (
+    <>
+      <Header />
+      <MainWrapper>
+        <StepperWrapper>
+          {/*TODO: Make sure the Stepper handles clicks on the button*/}
+          <Stepper currentStep={currentStep} />
+        </StepperWrapper>
+        <ButtonWrapper>
+          <Button onClick={handleNextStep}>Next</Button>
+        </ButtonWrapper>
+      </MainWrapper>
+    </>
+  );
 }
