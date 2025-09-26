@@ -14,7 +14,9 @@ export default function Stepper({ currentStep }: StepperProps) {
           >
             <div
               className={`w-[30px] h-[30px] md:w-10 md:h-10 flex items-center justify-center rounded-full font-bold  text-[12px] lg:text-[14px] font-semibold ${
-                currentStep >= index ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-700"
+                currentStep >= index
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-300 text-gray-700"
               } z-10`}
             >
               {index + 1}
@@ -22,6 +24,7 @@ export default function Stepper({ currentStep }: StepperProps) {
 
             {index < steps.length - 1 && (
               <div
+                data-testid="connection-line"
                 className={`absolute top-3 sm:top-4 md:top-5 left-1/2 w-full h-[4px] md:h-[4px] lg:h-[6px] bg-gray-300`}
               />
             )}

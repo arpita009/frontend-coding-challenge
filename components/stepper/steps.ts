@@ -3,7 +3,7 @@ interface Step {
 }
 
 export const steps: Step[] = [
-  { title: "Fahrzeug" },
+  { title: "Service" },
   { title: "Termin" },
   { title: "Fahrzeug" },
   { title: "Kontakt" },
