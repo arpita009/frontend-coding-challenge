@@ -1,10 +1,11 @@
-interface Step {
+export interface Step {
   title: string;
+  isCompleted: boolean;
 }
 
 export const steps: Step[] = [
-  { title: "Service" },
-  { title: "Termin" },
-  { title: "Fahrzeug" },
-  { title: "Kontakt" },
+  { title: "Service", isCompleted: false },
+  { title: "Termin", isCompleted: false },
+  { title: "Fahrzeug", isCompleted: false },
+  { title: "Kontakt", isCompleted: false },
 ];

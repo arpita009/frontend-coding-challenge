@@ -1,9 +1,10 @@
-import { steps } from "./steps";
+import { Step, steps } from "./steps";
 interface StepperProps {
+  steps: Step[];
   currentStep: number;
 }
 
-export default function Stepper({ currentStep }: StepperProps) {
+export default function Stepper({ steps, currentStep }: StepperProps) {
   return (
     <div className="p-4 relative min-h-[150px] flex items-center justify-center">
       <div className="flex items-center justify-between w-full max-w-4xl px-2 sm:px-4 relative">
@@ -13,19 +14,20 @@ export default function Stepper({ currentStep }: StepperProps) {
             className="flex flex-col items-center relative w-1/4"
           >
             <div
-              className={`w-[30px] h-[30px] md:w-10 md:h-10 flex items-center justify-center rounded-full font-bold  text-[12px] lg:text-[14px] font-semibold ${
-                currentStep >= index
+              className={`w-[30px] h-[30px] md:w-10 md:h-10 flex items-center justify-center rounded-full font-bold text-[12px] lg:text-[14px] font-semibold ${
+                step.isCompleted || index === currentStep
                   ? "bg-blue-500 text-white"
                   : "bg-gray-300 text-gray-700"
               } z-10`}
             >
               {index + 1}
             </div>
-
             {index < steps.length - 1 && (
               <div
                 data-testid="connection-line"
-                className={`absolute top-3 sm:top-4 md:top-5 left-1/2 w-full h-[4px] md:h-[4px] lg:h-[6px] bg-gray-300`}
+                className={`absolute top-3 sm:top-4 md:top-5 left-1/2 w-full h-[4px] md:h-[4px] lg:h-[6px] ${
+                  steps[index]?.isCompleted ? "bg-blue-500" : "bg-gray-300"
+                }`}
               />
             )}
 
