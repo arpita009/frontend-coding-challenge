@@ -1,5 +1,5 @@
 import StepPage from "../components/stepper/stepPage";
 
 export default function Termin() {
-  return <StepPage stepIndex={2} />;
+  return <StepPage />;
 }
