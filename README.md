@@ -44,7 +44,8 @@ pages/
 ```
 
 ## Architecture Diagram
-![Project Architecture](../frontend-coding-challenge/public/architectureDiagram.png)
+
+![Project Architecture](public/architectureDiagram.png)
 
 ## Setting up everything
 
@@ -67,8 +68,6 @@ To run the tests
 ```bash
 npm run test
 ```
-
-
 
 ## Features & Functionality
 
