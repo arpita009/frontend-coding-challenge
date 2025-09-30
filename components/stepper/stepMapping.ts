@@ -9,9 +9,9 @@ export const stepMapping: StepMapping = steps.reduce(
     const pageName: string | null = step.navigateTo
       ? step.navigateTo.replace("/", "")
       : null;
-    console.log(
-      `Mapping step "${step.title}" to page "${pageName}" with index ${index}`
-    );
+    // console.log(
+    //   `Mapping step "${step.title}" to page "${pageName}" with index ${index}`
+    // );
 
     if (pageName) {
       acc[pageName] = index + 1;

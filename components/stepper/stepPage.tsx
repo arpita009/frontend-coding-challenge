@@ -20,10 +20,14 @@ export default function StepPage({}: StepPageProps) {
   const pageName = pathname.split("/").pop() || "";
   const stepIndex = stepMapping[pageName];
   useEffect(() => {
-        if (stepIndex) {
-            setCurrentStep(stepIndex);
-        }
-    }, [setCurrentStep, stepIndex]);
+    if (stepIndex) {
+      setCurrentStep(stepIndex);
+    }
+  }, [setCurrentStep, stepIndex]);
+
+  if (!stepIndex) {
+    return <p>Invalid Step</p>;
+  }
 
   return (
     <>
