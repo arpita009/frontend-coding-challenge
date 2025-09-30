@@ -1,4 +1,4 @@
-import { Step, steps } from "./steps";
+import { Step } from "./steps";
 interface StepperProps {
   steps: Step[];
   currentStep: number;

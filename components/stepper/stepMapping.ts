@@ -5,7 +5,7 @@ interface StepMapping {
 }
 
 export const stepMapping: StepMapping = steps.reduce(
-  (acc: StepMapping, step: Step, index: number) => {
+  (accStepMapping: StepMapping, step: Step, stepIndex: number) => {
     const pageName: string | null = step.navigateTo
       ? step.navigateTo.replace("/", "")
       : null;
@@ -14,10 +14,10 @@ export const stepMapping: StepMapping = steps.reduce(
     // );
 
     if (pageName) {
-      acc[pageName] = index + 1;
+      accStepMapping[pageName] = stepIndex + 1;
     }
 
-    return acc;
+    return accStepMapping;
   },
   {}
 );
